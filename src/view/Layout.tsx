@@ -23,6 +23,7 @@ import IDraggable from "../model/IDraggable";
 export interface ILayoutProps {
     model: Model,
     factory: (node: TabNode) => React.ReactNode,
+    tabMenu?: () => void,
     onAction?: (action: Action) => void,
     onRenderTab?: (node: TabNode, renderValues: { leading: React.ReactNode, content: React.ReactNode }) => void,
     onRenderTabSet?: (tabSetNode: (TabSetNode | BorderNode), renderValues: { headerContent?: React.ReactNode, buttons: Array<React.ReactNode> }) => void,
@@ -102,6 +103,14 @@ export class Layout extends React.Component<ILayoutProps, any> {
         }
         else {
             this.model!.doAction(action);
+        }
+    }
+
+    tabMenu(){
+        if (this.props.tabMenu) {
+            return (this.props.tabMenu());
+        }else{
+            return false;
         }
     }
 

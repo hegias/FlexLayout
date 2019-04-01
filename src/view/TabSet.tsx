@@ -129,6 +129,16 @@ export class TabSet extends React.Component<ITabSetProps, any> {
                     className={cm("flexlayout__tab_toolbar_button-" + (node.isMaximized() ? "max" : "min"))}
                     onClick={this.onMaximizeToggle.bind(this)}></button>);
             }
+
+            if(this.props.node.isEnableMenu() && this.props.layout.tabMenu()){
+                buttons.push(
+                    <div className="flexlayout__tab-menu">
+                        {/*this.props.node.getMenuData()*/}
+                        {this.props.layout.tabMenu()}
+                    </div>
+                );
+                
+            }
             toolbar = <div key="toolbar" ref={ref => this.toolbarRef = (ref===null)?undefined:ref} className={cm("flexlayout__tab_toolbar")}
                 onMouseDown={this.onInterceptMouseDown.bind(this)}>
                 {buttons}

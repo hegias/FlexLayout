@@ -78,15 +78,7 @@ export class BorderButton extends React.Component<IBorderButtonProps, any> {
             leadingContent = <img src={node.getIcon()}/>;
         }
 
-
-        
-        // allow customization of leading contents (icon) and contents
-        const renderState = { leading: leadingContent, content: node.getName() };
-        this.props.layout.customizeTab(node, renderState);
-
-        let content = <div ref={ref => this.contentsRef = (ref===null)?undefined:ref} className={cm("flexlayout__border_button_content")}>{renderState.content}</div>;
-        const leading = <div className={cm("flexlayout__border_button_leading")}>{renderState.leading}</div>;
-
+        const content = <div ref={ref => this.contentsRef = (ref===null)?undefined:ref} className={cm("flexlayout__border_button_content")}>{node.getName()}</div>;
 
         let closeButton = undefined;
         if (this.props.node.isEnableClose()) {
@@ -102,7 +94,7 @@ export class BorderButton extends React.Component<IBorderButtonProps, any> {
                     className={classNames}
                     onMouseDown={this.onMouseDown.bind(this)}
                     onTouchStart={this.onMouseDown.bind(this)}>
-            {leading}
+            {leadingContent}
             {content}
             {closeButton}
         </div>;

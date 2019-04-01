@@ -90,6 +90,10 @@ class TabSetNode extends Node implements IDraggable, IDropTarget{
         return this._getAttr("enableMaximize") as boolean;
     }
 
+    isEnableMenu() {
+        return this._getAttr("enableMenu") as boolean;
+    }
+
     isEnableTabStrip() {
         return this._getAttr("enableTabStrip") as boolean;
     }
@@ -100,6 +104,10 @@ class TabSetNode extends Node implements IDraggable, IDropTarget{
 
     getClassNameHeader() {
         return this._getAttributeAsStringOrUndefined("classNameHeader");
+    }
+
+    getMenuData() {
+        return this._getAttributeAsStringOrUndefined("menuData");
     }
 
     getHeaderHeight() {
@@ -387,8 +395,10 @@ class TabSetNode extends Node implements IDraggable, IDropTarget{
         attributeDefinitions.addInherited("enableDrag", "tabSetEnableDrag");
         attributeDefinitions.addInherited("enableDivide", "tabSetEnableDivide");
         attributeDefinitions.addInherited("enableMaximize", "tabSetEnableMaximize");
+        attributeDefinitions.addInherited("enableMenu", "tabSetEnableMenu");
         attributeDefinitions.addInherited("classNameTabStrip", "tabSetClassNameTabStrip");
         attributeDefinitions.addInherited("classNameHeader", "tabSetClassNameHeader");
+        attributeDefinitions.addInherited("menuData", "tabSetMenuData");
         attributeDefinitions.addInherited("enableTabStrip", "tabSetEnableTabStrip");
         attributeDefinitions.addInherited("borderInsets", "tabSetBorderInsets");
         attributeDefinitions.addInherited("marginInsets", "tabSetMarginInsets");

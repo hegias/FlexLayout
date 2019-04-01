@@ -418,6 +418,7 @@ class Model {
         attributeDefinitions.add("tabSetEnableDrag", true).setType(Attribute.BOOLEAN);
         attributeDefinitions.add("tabSetEnableDivide", true).setType(Attribute.BOOLEAN);
         attributeDefinitions.add("tabSetEnableMaximize", true).setType(Attribute.BOOLEAN);
+        attributeDefinitions.add("tabSetEnableMenu", true).setType(Attribute.BOOLEAN);
         attributeDefinitions.add("tabSetClassNameTabStrip", undefined).setType(Attribute.STRING);
         attributeDefinitions.add("tabSetClassNameHeader", undefined).setType(Attribute.STRING);
         attributeDefinitions.add("tabSetEnableTabStrip", true).setType(Attribute.BOOLEAN);
