@@ -64,7 +64,27 @@ export class Tab extends React.Component<ITabProps, any> {
             child = this.props.factory(node);
         }
 
-        return <div className={cm("flexlayout__tab "+"width-content-"+style.width)}
+        let flexlayoutWidthSize = 'flexlayout__tab_width_default';
+        if(style.width < 100){
+            flexlayoutWidthSize = 'flexlayout__tab_width_xs';
+        }else if(style.width > 100 && style.width < 355){
+            flexlayoutWidthSize = 'flexlayout__tab_width_x';
+        }else if(style.width > 355 && style.width < 500){
+            flexlayoutWidthSize = 'flexlayout__tab_width_ms';
+        }else if(style.width > 500 && style.width < 768){
+            flexlayoutWidthSize = 'flexlayout__tab_width_m';
+        }else if(style.width > 768 && style.width < 992){
+            flexlayoutWidthSize = 'flexlayout__tab_width_ms';
+        }else if(style.width > 992 && style.width < 1200){
+            flexlayoutWidthSize = 'flexlayout__tab_width_xlg';
+        }else if(style.width > 1200 && style.width < 1500){
+            flexlayoutWidthSize = 'flexlayout__tab_width_lg';
+        }else{
+            flexlayoutWidthSize = 'flexlayout__tab_width_large';
+        }
+
+        
+        return <div className={cm("flexlayout__tab "+flexlayoutWidthSize)}
                     onMouseDown={this.onMouseDown.bind(this)}
                     onTouchStart={this.onMouseDown.bind(this)}
                     style={style}>{child}
