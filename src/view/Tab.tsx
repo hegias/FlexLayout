@@ -84,7 +84,7 @@ export class Tab extends React.Component<ITabProps, any> {
         }else if(getStyleWidth > 768 && getStyleWidth < 992){
             flexlayoutWidthSize = 'flexlayout__tab_width_ms';
         }else if(getStyleWidth > 992 && getStyleWidth < 1200){
-            flexlayoutWidthSize = 'flexlayout__tab_width_xlg';
+            flexlayoutWidthSize = 'flexlayout__tab_width_lgs';
         }else if(getStyleWidth > 1200 && getStyleWidth < 1500){
             flexlayoutWidthSize = 'flexlayout__tab_width_lg';
         }else{
@@ -103,7 +103,7 @@ export class Tab extends React.Component<ITabProps, any> {
         }else if(getStyleHeight > 768 && getStyleHeight < 992){
             flexlayoutHeightSize = 'flexlayout__tab_height_ms';
         }else if(getStyleHeight > 992 && getStyleHeight < 1200){
-            flexlayoutHeightSize = 'flexlayout__tab_height_xlg';
+            flexlayoutHeightSize = 'flexlayout__tab_height_lgs';
         }else if(getStyleHeight > 1200 && getStyleHeight < 1500){
             flexlayoutHeightSize = 'flexlayout__tab_height_lg';
         }else{
