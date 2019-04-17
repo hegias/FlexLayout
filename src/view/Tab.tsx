@@ -64,7 +64,7 @@ export class Tab extends React.Component<ITabProps, any> {
             child = this.props.factory(node);
         }
 
-        return <div className={cm("flexlayout__tab")}
+        return <div className={cm("flexlayout__tab "+"width-content-"+style.width)}
                     onMouseDown={this.onMouseDown.bind(this)}
                     onTouchStart={this.onMouseDown.bind(this)}
                     style={style}>{child}

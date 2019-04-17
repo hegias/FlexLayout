@@ -112,11 +112,15 @@ export class Splitter extends React.Component<ISplitterProps, any> {
             }
         );
 
+        console.log('style: ', style);
+        if(style.width){
+
+        }
         return <div
             style={style}
             onTouchStart={this.onMouseDown.bind(this)}
             onMouseDown={this.onMouseDown.bind(this)}
-            className={cm("flexlayout__splitter "+OrientationStyle)}>
+            className={cm("flexlayout__splitter "+OrientationStyle+' width-'+style.width)}>
         </div>;
     }
 }
