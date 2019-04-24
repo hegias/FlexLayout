@@ -69,13 +69,12 @@ export class Tab extends React.Component<ITabProps, any> {
         let getStyleWidth= parseInt(style.width, 10);
         let getStyleHeight= parseInt(style.height, 10);
 
-        console.log('getStyleHeight: ',getStyleHeight);
-        console.log('style.height: ',style.height);
-
         //SET WIDTH CLASS
         if(getStyleWidth < 100){
+            flexlayoutWidthSize = 'flexlayout__tab_width_small';
+        }else if(getStyleWidth > 100 && getStyleWidth < 260){
             flexlayoutWidthSize = 'flexlayout__tab_width_xs';
-        }else if(getStyleWidth > 100 && getStyleWidth < 355){
+        }else if(getStyleWidth > 260 && getStyleWidth < 355){
             flexlayoutWidthSize = 'flexlayout__tab_width_x';
         }else if(getStyleWidth > 355 && getStyleWidth < 500){
             flexlayoutWidthSize = 'flexlayout__tab_width_ms';
@@ -94,7 +93,9 @@ export class Tab extends React.Component<ITabProps, any> {
         //SET HEIGHT CLASS
         if(getStyleHeight < 100){
             flexlayoutHeightSize = 'flexlayout__tab_height_xs';
-        }else if(getStyleHeight > 100 && getStyleHeight < 355){
+        }else if(getStyleWidth > 100 && getStyleWidth < 260){
+            flexlayoutWidthSize = 'flexlayout__tab_height_xs';
+        }else if(getStyleHeight > 260 && getStyleHeight < 355){
             flexlayoutHeightSize = 'flexlayout__tab_height_x';
         }else if(getStyleHeight > 355 && getStyleHeight < 500){
             flexlayoutHeightSize = 'flexlayout__tab_height_ms';

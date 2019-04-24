@@ -112,7 +112,6 @@ export class Splitter extends React.Component<ISplitterProps, any> {
             }
         );
 
-        console.log('style: ', style);
         if(style.width){
 
         }
