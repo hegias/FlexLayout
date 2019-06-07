@@ -92,9 +92,9 @@ export class Tab extends React.Component<ITabProps, any> {
 
         //SET HEIGHT CLASS
         if(getStyleHeight < 100){
-            flexlayoutHeightSize = 'flexlayout__tab_height_xs';
+            flexlayoutHeightSize = 'flexlayout__tab_height_small';
         }else if(getStyleWidth > 100 && getStyleWidth < 260){
-            flexlayoutWidthSize = 'flexlayout__tab_height_xs';
+            flexlayoutHeightSize = 'flexlayout__tab_height_xs';
         }else if(getStyleHeight > 260 && getStyleHeight < 355){
             flexlayoutHeightSize = 'flexlayout__tab_height_x';
         }else if(getStyleHeight > 355 && getStyleHeight < 500){
